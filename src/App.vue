@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="switchUserLogin">{{ isLogin ? 'logout' : 'login' }}</button>
+    <FlexTemplate v-if="isLogin" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import liff from '@line/liff'
+import FlexTemplate from './components/FlexTemplate.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    FlexTemplate
+  },
+  data () {
+    return {
+      liffId: '1654917104-1xkXQaav',
+      isLogin: false
+    }
+  },
+  methods: {
+    switchUserLogin () {
+      this.isLogin ? liff.logout() : liff.login()
+    },
+    initLiff () {
+      liff.init({ liffId: this.liffId }).then(() => {
+        this.isLogin = liff.isLoggedIn()
+      })
+    }
+  },
+  created () {
+    this.initLiff()
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
