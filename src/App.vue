@@ -16,7 +16,7 @@ export default {
   },
   data () {
     return {
-      liffId: '1654917104-1xkXQaav',
+      liffId: '1654944538-wRrGzXyX',
       isLogin: false
     }
   },
