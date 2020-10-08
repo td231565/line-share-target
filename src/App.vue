@@ -27,9 +27,9 @@ export default {
   },
   methods: {
     async switchUserLogin () {
-      this.isLogin = true
+      this.isLoading = true
       await this.isLogin ? liff.logout() : liff.login()
-      this.isLogin = false
+      this.isLoading = false
     },
     initLiff () {
       liff.init({ liffId: this.liffId }).then(() => {
