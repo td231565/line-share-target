@@ -25,7 +25,7 @@ export default {
         contents: [
           {
             type: 'image',
-            url: 'https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip1.jpg'
+            url: 'https://cf.shopee.tw/file/d958ed755e191f10f9afb3a2c710894a'
           },
           {
             type: 'image',

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <p>{{ isLogin ? 'already login' : 'please login' }}</p>
     <button @click="switchUserLogin">{{ isLogin ? 'logout' : 'login' }}</button>
     <FlexTemplate v-if="isLogin" />
   </div>
