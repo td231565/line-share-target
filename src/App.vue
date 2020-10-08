@@ -6,8 +6,11 @@
       <button class="state-bar__button"
         @click="switchUserLogin">{{ isLogin ? 'logout' : 'login' }}</button>
     </div>
-    <FlexTemplate class="p-2" v-if="isLogin" />
-    <h2 v-else>Please login</h2>
+    <div class="main p-2">
+      <FlexTemplate v-if="isLogin"
+        @shareMessage="shareMessage" />
+      <h2 v-else>Please login</h2>
+    </div>
   </div>
 </template>
 
@@ -33,6 +36,9 @@ export default {
       await this.isLogin ? liff.logout() : liff.login()
       this.isLogin = !this.isLogin
       this.isLoading = false
+    },
+    shareMessage () {
+      liff.shareTargetPicker([this.resultMsgTemplate])
     },
     initLiff () {
       liff.init({ liffId: this.liffId }).then(() => {

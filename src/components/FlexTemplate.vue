@@ -109,8 +109,7 @@ export default {
     },
     // 對好友及群組發送訊息
     sendMessageToFriend () {
-      // 需傳入陣列，最多 5 個子物件，每一物件即為一則 message
-      liff.shareTargetPicker([this.resultMsgTemplate])
+      this.$emit('shareMessage', this.resultMsgTemplate)
     },
     // 轉成純文字儲存進 DB
     saveMessageTemplate () {
