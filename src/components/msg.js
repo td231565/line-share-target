@@ -24,19 +24,81 @@ const msg = {
       },
       {
         "type": "bubble",
-        "body": {
+        "header": {
           "type": "box",
           "layout": "vertical",
           "contents": [
             {
               "type": "image",
-              "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip1.jpg",
+              "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+              "gravity": "center",
               "size": "full",
-              "aspectMode": "cover",
-              "gravity": "top"
+              "aspectRatio": "4:3",
+              "aspectMode": "cover"
             }
           ],
           "paddingAll": "0px"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "text",
+                  "contents": [],
+                  "size": "xl",
+                  "wrap": true,
+                  "text": "Title Here",
+                  "color": "#ffffff",
+                  "weight": "bold"
+                },
+                {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "$9,000",
+                      "decoration": "line-through",
+                      "color": "#dddddd",
+                      "size": "sm"
+                    },
+                    {
+                      "type": "text",
+                      "text": "$5,699",
+                      "color": "#ffffff",
+                      "size": "md",
+                      "align": "start"
+                    }
+                  ],
+                  "width": "120px"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "Go shopping",
+                        "uri": "http://linecorp.com/"
+                      }
+                    }
+                  ],
+                  "backgroundColor": "#dddddd",
+                  "cornerRadius": "8px"
+                }
+              ],
+              "spacing": "sm"
+            }
+          ],
+          "paddingAll": "20px",
+          "backgroundColor": "#464F69"
         }
       },
       {

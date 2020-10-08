@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import liff from '@line/liff'
 import SingleMessage from './SingleMessage'
 
 export default {
