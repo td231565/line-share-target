@@ -1,1 +1,65 @@
 @import './helpers';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.state-bar {
+  width: 100%;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  color: #eee;
+  background-color: #494949;
+
+  &__button {
+    padding: 0 6px;
+  }
+}
+
+.form-item {
+  margin-bottom: 0.5rem;
+  @include flex(flex-start, center);
+  font-size: 0.9rem;
+  > label {
+    margin-right: 0.5rem;
+  }
+  > input {
+    padding: 2px 4px;
+  }
+}
+
+.msg {
+  &__container {
+    display: flex;
+  }
+
+  &__tab {
+    &__item {
+      padding: 3px 8px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      border-radius: 2px;
+      box-shadow: 0 3px 5px #b5a0c9;
+      &--active {
+        color: #eee;
+        background-color: #350d5a;
+      }
+    }
+  }
+
+  &__item {
+    &__image {
+      width: 200px;
+      height: 200px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+    }
+  }
+}
