@@ -83,6 +83,7 @@ export default {
     saveMessageTemplate () {
       // const msg = JSON.stringify(this.msgData)
       // do upload
+      // 預計使用 fire store
     }
   }
 }
