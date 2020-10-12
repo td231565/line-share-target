@@ -76,10 +76,13 @@ export default {
       return {
         type: 'flex',
         altText: this.msgData.altText,
-        contents: this.msgData.contents.map(item => {
-          let contentMsg = contentFunctions[item.type]
-          return contentMsg(item)
-        })
+        contents: {
+          type: 'carousel',
+          contents: this.msgData.contents.map(item => {
+            let contentMsg = contentFunctions[item.type]
+            return contentMsg(item)
+          })
+        }
       }
     }
   },
