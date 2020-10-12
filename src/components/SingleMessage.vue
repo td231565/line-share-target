@@ -1,6 +1,12 @@
 <template>
   <div>
-    <div :style="`background-image: url(${msg.url})`" class="msg__item__image"></div>
+    <div class="image">
+      <div :style="`background-image: url(${msg.url})`" class="msg__item__image"></div>
+    </div>
+    <div class="main">
+      <label for="">圖片網址</label>
+      <input type="text" v-model.trim="msg.url">
+    </div>
   </div>
 </template>
 

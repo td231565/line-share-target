@@ -51,8 +51,16 @@ export default {
           {
             type: 'image',
             url: 'https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip1.jpg'
+          },
+        ],
+        // 結尾頁單獨拉出
+        endPage: {
+          url: 'https://cf.shopee.tw/file/d958ed755e191f10f9afb3a2c710894a',
+          action: {
+            text: 'Go Shopping!',
+            uri: 'https://shopee.tw/lulumibeauty'
           }
-        ]
+        }
       }
     }
   },
@@ -61,40 +69,49 @@ export default {
       return this.msgData.contents[this.currentMsgIndex]
     },
     resultMsgTemplate () {
-      let msg = {
-        type: 'flex',
-        altText: this.msgData.altText
+      const contentFunctions = {
+        image: this.createImageTemplateByData,
+        end: this.createImageTemplateByData
       }
-      msg.contents = this.msgData.contents.map(item => {
-        let contentMsg = {}
-        if (item.type === 'image') {
-          // 產生圖片 bubble
-          contentMsg = {
-            type: 'bubble',
-            body: {
-              type: 'box',
-              layout: 'vertical',
-              contents: [
-                {
-                  type: 'image',
-                  url: item.url,
-                  size: 'full',
-                  aspectMode: 'cover',
-                  gravity: 'top'
-                }
-              ],
-              paddingAll: '0px'
-            }
-          }
-        } else {
-          // 產生結尾 bubble
-        }
-        return contentMsg
-      })
-      return msg
+      return {
+        type: 'flex',
+        altText: this.msgData.altText,
+        contents: this.msgData.contents.map(item => {
+          let contentMsg = contentFunctions[item.type]
+          return contentMsg(item)
+        })
+      }
     }
   },
   methods: {
+    createImageTemplateByData (itemData) {
+      const imgTemplate = {
+        type: 'bubble',
+        header: {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'image',
+              url: itemData.url,
+              size: 'full',
+              aspectMode: 'cover',
+              gravity: 'top'
+            }
+          ],
+          paddingAll: '0px'
+        }
+      }
+      if (itemData.action) {
+        imgTemplate.header.contents[0].action = {
+          action: {
+            type: 'uri',
+            uri: 'http://linecorp.com/'
+          }
+        }
+      }
+      return imgTemplate
+    },
     getDragoverIndex (idx) {
       this.dragOverItemIndex = idx
     },
@@ -116,6 +133,8 @@ export default {
       // do upload
       // 預計使用 fire store
     }
+  },
+  created () {
   }
 }
 </script>

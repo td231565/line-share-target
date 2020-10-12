@@ -37,8 +37,8 @@ export default {
       this.isLogin = !this.isLogin
       this.isLoading = false
     },
-    shareMessage () {
-      liff.shareTargetPicker([this.resultMsgTemplate])
+    shareMessage (resultMsgTemplate) {
+      liff.shareTargetPicker([resultMsgTemplate])
     },
     initLiff () {
       liff.init({ liffId: this.liffId }).then(() => {

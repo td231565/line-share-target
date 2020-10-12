@@ -30,7 +30,7 @@ const msg = {
           "contents": [
             {
               "type": "image",
-              "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+              "url": "https://cf.shopee.tw/file/d958ed755e191f10f9afb3a2c710894a",
               "gravity": "center",
               "size": "full",
               "aspectRatio": "4:3",
@@ -58,24 +58,25 @@ const msg = {
                 },
                 {
                   "type": "box",
-                  "layout": "horizontal",
+                  "layout": "baseline",
                   "contents": [
                     {
                       "type": "text",
                       "text": "$9,000",
                       "decoration": "line-through",
                       "color": "#dddddd",
-                      "size": "sm"
+                      "size": "md",
+                      "flex": 0
                     },
                     {
                       "type": "text",
                       "text": "$5,699",
                       "color": "#ffffff",
                       "size": "md",
-                      "align": "start"
+                      "flex": 0
                     }
                   ],
-                  "width": "120px"
+                  "spacing": "lg"
                 },
                 {
                   "type": "box",
