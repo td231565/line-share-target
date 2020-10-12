@@ -106,6 +106,7 @@ export default {
         imgTemplate.header.contents[0].action = {
           action: {
             type: 'uri',
+            label: 'action',
             uri: 'http://linecorp.com/'
           }
         }
