@@ -104,11 +104,9 @@ export default {
       }
       if (itemData.action) {
         imgTemplate.header.contents[0].action = {
-          action: {
-            type: 'uri',
-            label: 'action',
-            uri: 'http://linecorp.com/'
-          }
+          type: 'uri',
+          label: 'action',
+          uri: 'http://linecorp.com/'
         }
       }
       return imgTemplate
