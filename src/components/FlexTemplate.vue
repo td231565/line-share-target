@@ -96,19 +96,24 @@ export default {
               url: itemData.url,
               size: 'full',
               aspectMode: 'cover',
-              gravity: 'top'
+              gravity: 'top',
+              action: itemData.action ? {
+                type: 'uri',
+                label: 'action',
+                uri: itemData.action
+              } : null
             }
           ],
           paddingAll: '0px'
         }
       }
-      if (itemData.action) {
-        imgTemplate.header.contents[0].action = {
-          type: 'uri',
-          label: 'action',
-          uri: 'http://linecorp.com/'
-        }
-      }
+      // if (itemData.action) {
+      //   imgTemplate.header.contents[0].action = {
+      //     type: 'uri',
+      //     label: 'action',
+      //     uri: 'http://linecorp.com/'
+      //   }
+      // }
       return imgTemplate
     },
     getDragoverIndex (idx) {
