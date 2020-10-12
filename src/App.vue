@@ -34,7 +34,7 @@ export default {
     async switchUserLogin () {
       this.isLoading = true
       await this.isLogin ? liff.logout() : liff.login()
-      this.isLogin = !this.isLogin
+      this.isLogin = liff.isLoggedIn()
       this.isLoading = false
     },
     shareMessage (resultMsgTemplate) {
