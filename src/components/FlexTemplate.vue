@@ -42,16 +42,13 @@ export default {
         contents: [
           {
             type: 'image',
-            url: 'https://cf.shopee.tw/file/d958ed755e191f10f9afb3a2c710894a'
+            url: 'https://cf.shopee.tw/file/d958ed755e191f10f9afb3a2c710894a',
+            action: 'https://shopee.tw/%E6%96%B0%E8%89%B2%E4%B8%8A%E5%B8%82-%E7%8F%BE%E8%B2%A8%EF%BD%9CLuMi%F0%9F%92%84-Maybelline-%E5%AA%9A%E6%AF%94%E7%90%B3-%E8%B6%85%E6%8C%81%E4%B9%85%E9%9C%A7%E6%84%9F%E6%B6%B2%E6%85%8B%E5%94%87%E8%86%8F-%E9%9C%A7%E9%9D%A2%E5%94%87%E9%87%89-Catie%E5%B0%8F%E7%B1%B3-i.94902627.2813807242'
           },
           {
             type: 'image',
             url: 'https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip1.jpg'
-          },
-          {
-            type: 'image',
-            url: 'https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip1.jpg'
-          },
+          }
         ],
         // 結尾頁單獨拉出
         endPage: {

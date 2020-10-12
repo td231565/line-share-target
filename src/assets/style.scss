@@ -54,6 +54,7 @@ ul, li {
   }
 
   &__item {
+    display: flex;
     &__image {
       width: 200px;
       height: 200px;
